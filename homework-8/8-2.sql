@@ -71,3 +71,12 @@ UPDATE products SET name = NULL WHERE name LIKE 'name-2' LIMIT 1;
 -- Смотрим на содержимое тестовой таблицы, убеждаясь что там нет значений name=NULL одновременно с descr=NULL:
 
 SELECT * FROM products;
+/*
++----+--------+-------------+
+| id | name   | description |
++----+--------+-------------+
+|  1 | name 1 | descr-1     |
+|  2 | name-2 | NULL        |
+|  3 | NULL   | descr-3     |
++----+--------+-------------+
+*/

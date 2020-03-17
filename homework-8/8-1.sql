@@ -12,7 +12,7 @@
 DELIMITER //
 DROP FUNCTION IF EXISTS hello;
 CREATE FUNCTION hello ()
-RETURNS TEXT DETERMINISTIC
+RETURNS TEXT NOT DETERMINISTIC
 BEGIN
   DECLARE curhour INT DEFAULT 0;
   SET curhour = HOUR(NOW());
@@ -35,3 +35,10 @@ DELIMITER ;
 CREATE DATABASE IF NOT EXISTS shop;
 USE shop
 SELECT hello();
+/*
++-------------------------+
+| hello()                 |
++-------------------------+
+| Добрый вечер            |
++-------------------------+
+*/
