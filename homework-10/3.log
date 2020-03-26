@@ -1,0 +1,19 @@
+//
+// Задача:
+//
+// 3. Организуйте хранение категорий и товарных позиций учебной базы данных shop в СУБД MongoDB.
+//
+
+use shop
+db.shop.insert(
+{"name": "Intel Core i3-8100","description": "Процессор для настольных ПК", "price": "8000.00", "catalog_id": "Процессоры", "created_at": new Date(), "updated_at": new Date()}) 
+
+db.shop.insertMany([
+    {"name": "AMD FX-8320", "description": "Процессор для настольных ПК", "price": "4000.00", "catalog_id": "Процессоры", "created_at": new Date(), "updated_at": new Date()},
+    {"name": "AMD FX-8320E", "description": "Процессор для настольных ПК", "price": "4500.00", "catalog_id": "Процессоры", "created_at": new Date(), "updated_at": new Date()}])
+
+db.shop.find().pretty()
+db.shop.find({name: "AMD FX-8320"}).pretty()
+
+
+
